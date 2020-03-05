@@ -1,4 +1,5 @@
 It's noticable that in OpenCV, HSV is ranged from H: 0 to 179, S: 0 to 255, V: 0 to 255
+OpenCV shows the images in RGB format, disregarding the color space owing to the fact that we have hardware limitations.
 
 HSV Color Description:
 https://en.wikipedia.org/wiki/HSL_and_HSV
