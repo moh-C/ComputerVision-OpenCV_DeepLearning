@@ -9,3 +9,12 @@ https://www.geeksforgeeks.org/python-intensity-transformation-operations-on-imag
 
 The Linear Transform (Code Later on):
 https://docs.opencv.org/master/d3/dc1/tutorial_basic_linear_transform.html
+
+
+Some more info can be found here:
+https://docs.opencv.org/master/d4/d1b/tutorial_histogram_equalization.html
+https://docs.opencv.org/master/d8/dbc/tutorial_histogram_calculation.html
+https://en.wikipedia.org/wiki/Histogram_equalization
+
+Something VERY good:
+https://www.programcreek.com/python/example/70449/cv2.calcHist	
