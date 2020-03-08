@@ -7,7 +7,7 @@ https://www.youtube.com/watch?v=WuVyG4pg9xQ
 Intensity Transformations:
 https://www.geeksforgeeks.org/python-intensity-transformation-operations-on-images/
 
-The Linear Transform (Code Later on):
+The Linear Transform:
 https://docs.opencv.org/master/d3/dc1/tutorial_basic_linear_transform.html
 
 
