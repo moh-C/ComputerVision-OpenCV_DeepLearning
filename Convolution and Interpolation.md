@@ -20,3 +20,6 @@ https://www.encyclopediaofmath.org/index.php/Corner_detection
 https://dsp.stackexchange.com/questions/27751/structure-tensor-vs-hessian-matrix
 https://www.youtube.com/watch?v=veieEffgd5A
 https://mail.python.org/pipermail//scikit-image/2013-April/002012.html
+
+Blob Detection:
+https://medium.com/image-processing-in-robotics/blob-detection-309226a3ea5b
