@@ -23,3 +23,9 @@ https://mail.python.org/pipermail//scikit-image/2013-April/002012.html
 
 Blob Detection:
 https://medium.com/image-processing-in-robotics/blob-detection-309226a3ea5b
+
+Great feature detection:
+https://medium.com/analytics-vidhya/introduction-to-feature-detection-and-matching-65e27179885d
+
+HoG feature detection: (great video)
+https://www.youtube.com/watch?v=28xk5i1_7Zc
