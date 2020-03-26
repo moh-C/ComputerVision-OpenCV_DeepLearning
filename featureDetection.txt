@@ -1,3 +1,12 @@
 Feature detection:
 https://medium.com/analytics-vidhya/introduction-to-feature-detection-and-matching-65e27179885d
 https://medium.com/analytics-vidhya/introduction-to-harris-corner-detector-32a88850b3f6
+
+KNN for feature detection:
+https://www.cc.gatech.edu/classes/AY2016/cs4476_fall/results/proj2/html/akachhara3/
+
+FLANN matcher:
+https://docs.opencv.org/3.4/d5/d6f/tutorial_feature_flann_matcher.html
+
+SIFT:
+https://medium.com/analytics-vidhya/introduction-to-sift-scale-invariant-feature-transform-65d7f3a72d40
