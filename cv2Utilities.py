@@ -140,8 +140,7 @@ def warping(image, h):
 def show(image, name='Image', done=True):
     cv2.imshow(name, image)
     cv2.waitKey()
-    if done:
-        cv2.destroyWindow(name)
+    cv2.destroyAllWindows()
     
 def BRIEF_compare(img1, img2, n=20):
     gry1 = gray(img1)
