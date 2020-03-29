@@ -137,7 +137,39 @@ def warping(image, h):
     _, approx = boundingRect(img, cnt)
     return four_point_transform(img, approx.reshape(4, 2) * ratio)
 
-def show(image):
-    cv2.imshow('Image', image)
+def show(image, name='Image', done=True):
+    cv2.imshow(name, image)
     cv2.waitKey()
-    cv2.destroyAllWindows()
+    if done:
+        cv2.destroyWindow(name)
+    
+def BRIEF_compare(img1, img2, n=20):
+    gry1 = gray(img1)
+    gry2 = gray(img2)
+
+    fast = cv2.FastFeatureDetector_create()
+    brief = cv2.xfeatures2d.BriefDescriptorExtractor_create()
+
+    kp1 = fast.detect(gry1, None)
+    kp2 = fast.detect(gry2, None)
+    kp1, des1 = brief.compute(gry1, kp1)
+    kp2, des2 = brief.compute(gry2, kp2)
+
+    bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
+    matches = bf.match(des1,des2)
+    matches = sorted(matches, key = lambda x:x.distance)
+    return cv2.drawMatches(img1,kp1,img2,kp2,matches[:n], outImg=None, flags=2)
+
+def ORB_compare(img1, img2, nfeature=500, n=20):
+    orb = cv2.ORB_create(nfeature)
+    gry1 = gray(img1)
+    gry2 = gray(img2)
+
+    kp1, des1 = orb.detectAndCompute(gry1,None)
+    kp2, des2 = orb.detectAndCompute(gry2,None)
+
+    bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
+    matches = bf.match(des1,des2)
+    matches = sorted(matches, key = lambda x:x.distance)
+
+    return cv2.drawMatches(img1,kp1,img2,kp2,matches[:n], outImg=None, flags=2)
