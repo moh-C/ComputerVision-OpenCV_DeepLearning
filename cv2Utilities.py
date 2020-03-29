@@ -173,6 +173,7 @@ def ORB_compare(img1, img2, nfeature=500, n=20):
 
     return cv2.drawMatches(img1,kp1,img2,kp2,matches[:n], outImg=None, flags=2)
 
+
 def SIFT_compare(img1, img2, nfeature=500, nmatch=20):
     gry1 = gray(img1)
     gry2 = gray(img2)
@@ -189,4 +190,24 @@ def SIFT_compare(img1, img2, nfeature=500, nmatch=20):
         if m.distance < 0.75 * n.distance:
             good.append([m])
             
+    return cv2.drawMatchesKnn(img1,kp1,img2,kp2,good[:nmatch],flags=2, outImg=None)
+
+
+def SURF_compare(img1, img2, mHessian=200, nmatch=20):
+    gry1 = gray(img1)
+    gry2 = gray(img2)
+
+    surf = cv2.xfeatures2d.SURF_create(mHessian)
+
+    kp1, des1 = surf.detectAndCompute(gry1, None)
+    kp2, des2 = surf.detectAndCompute(gry2, None)
+
+    bf = cv2.BFMatcher()
+    matches = bf.knnMatch(des1,des2, k=2)
+
+    good = []
+    for m,n in matches:
+        if m.distance < 0.75*n.distance:
+            good.append([m])
+
     return cv2.drawMatchesKnn(img1,kp1,img2,kp2,good[:nmatch],flags=2, outImg=None)
