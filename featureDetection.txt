@@ -10,3 +10,8 @@ https://docs.opencv.org/3.4/d5/d6f/tutorial_feature_flann_matcher.html
 
 SIFT:
 https://medium.com/analytics-vidhya/introduction-to-sift-scale-invariant-feature-transform-65d7f3a72d40
+
+Training custom dlib shape predictor: (Two of the best)
+https://www.pyimagesearch.com/2019/12/16/training-a-custom-dlib-shape-predictor/
+https://medium.com/datadriveninvestor/training-alternative-dlib-shape-predictor-models-using-python-d1d8f8bd9f5c
+https://www.youtube.com/watch?v=BCBZPtZCI7w
