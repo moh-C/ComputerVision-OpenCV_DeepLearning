@@ -4,13 +4,15 @@ import cv2
 
 class LinearClassifier():
     def __init__(self, Rogue, Hover):
-        self.epochs = 100
+        self.epochs = 200
         self.hover = self.preprocess_data(Hover)
         self.rogue = self.preprocess_data(Rogue)
         
         self.model = model = keras.models.Sequential([
             keras.layers.InputLayer((80,80,3)),
             keras.layers.Conv2D(64, 3, padding= 'same'),
+            keras.layers.MaxPooling2D(),
+            keras.layers.Conv2D(32, 3, padding= 'same'),
             keras.layers.MaxPooling2D(),
             keras.layers.Flatten(),
             keras.layers.Dense(1, activation= 'sigmoid')
@@ -31,7 +33,7 @@ class LinearClassifier():
     def prep_data(self):
         _hover = self.hover
         _rogue = self.rogue
-        X_train = np.vstack([_hover, _rogue])
+        X_train = np.vstack([_hover, _rogue])/255.0
         y_train = np.array([1.0,0.0])
         return X_train, y_train
         
